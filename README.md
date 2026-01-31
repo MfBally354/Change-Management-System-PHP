@@ -63,7 +63,7 @@ Setiap aktivitas tercatat:
 # Via SSH
 ssh user@your-server
 cd /var/www/
-git clone [repository-url] change-management
+git clone https://github.com/MfBally354/Change-Management-System-PHP.git change-management
 # atau copy manual files ke /var/www/change-management
 ```
 
