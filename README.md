@@ -87,7 +87,7 @@ Edit file `/var/www/change-management/config/database.php`:
 ```php
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');           // sesuaikan
-define('DB_PASS', '[Masukkan]');  // sesuaikan
+define('DB_PASS', '[Masukkan password]');  // sesuaikan
 define('DB_NAME', 'change_management');
 ```
 
