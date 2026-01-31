@@ -1,5 +1,5 @@
 -- Change Management System Database
--- Buat database dulu ya..
+-- Buat database dulu ya...
 CREATE DATABASE IF NOT EXISTS change_management;
 USE change_management;
 
