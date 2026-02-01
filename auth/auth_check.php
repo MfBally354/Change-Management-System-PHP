@@ -41,7 +41,7 @@ function requireRole($role) {
 function getCurrentUser() {
     if (!isLoggedIn()) return null;
     
-    require_once __DIR__ . '/../config/database.php';
+    global $conn;
     
     $sql = "SELECT id, username, full_name, email, role, department FROM users WHERE id = ?";
     $stmt = $conn->prepare($sql);
