@@ -32,7 +32,7 @@ function requireRole($role) {
     
     if (!hasRole($role)) {
         $_SESSION['error'] = "Anda tidak memiliki akses ke halaman ini.";
-        header('Location: /change-management/index.php');
+        header('Location: /index.php');
         exit;
     }
 }
