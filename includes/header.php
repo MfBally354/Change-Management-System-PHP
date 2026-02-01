@@ -23,7 +23,7 @@
                     <?php endif; ?>
                     
                     <?php if (canPerformAction('manage_users')): ?>
-                    <li><a href="/change-management/admin/users.php">Users</a></li>
+                    <li><a href="/admin/users.php">Users</a></li>
                     <?php endif; ?>
                 </ul>
             </nav>
