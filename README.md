@@ -226,7 +226,7 @@ change-management/
 │   └── style.css          # Styling
 │
 └── includes/
-    ├── header.php         # Header templates
+    ├── header.php         # Header template
     └── footer.php         # Footer template
 ```
 
