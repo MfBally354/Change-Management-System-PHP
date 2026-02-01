@@ -21,7 +21,7 @@ function hasRole($role) {
 // Fungsi untuk redirect jika belum login
 function requireLogin() {
     if (!isLoggedIn()) {
-        header('Location: /change-management/login.php');
+        header('Location: /login.php');
         exit;
     }
 }
@@ -32,7 +32,7 @@ function requireRole($role) {
     
     if (!hasRole($role)) {
         $_SESSION['error'] = "Anda tidak memiliki akses ke halaman ini.";
-        header('Location: /change-management/index.php');
+        header('Location: /index.php');
         exit;
     }
 }
