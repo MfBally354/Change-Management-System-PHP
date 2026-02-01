@@ -32,7 +32,7 @@
                     <strong><?php echo htmlspecialchars($user['full_name']); ?></strong>
                     <div class="role-badge"><?php echo getRoleName($user['role']); ?></div>
                 </div>
-                <a href="/change-management/logout.php" class="btn btn-secondary">Logout</a>
+                <a href="/logout.php" class="btn btn-secondary">Logout</a>
             </div>
         </div>
     </header>
