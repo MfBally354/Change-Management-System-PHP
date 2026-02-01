@@ -16,7 +16,7 @@
             <nav>
                 <ul>
                     <li><a href="/index.php">Dashboard</a></li>
-                    <li><a href="/change-management/changes/list.php">Change Requests</a></li>
+                    <li><a href="/changes/list.php">Change Requests</a></li>
                     
                     <?php if (canPerformAction('view_audit_logs')): ?>
                     <li><a href="/change-management/logs/audit.php">Audit Logs</a></li>
