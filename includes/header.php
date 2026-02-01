@@ -15,7 +15,7 @@
             <h1>🔧 Change Management System</h1>
             <nav>
                 <ul>
-                    <li><a href="/change-management/index.php">Dashboard</a></li>
+                    <li><a href="/index.php">Dashboard</a></li>
                     <li><a href="/change-management/changes/list.php">Change Requests</a></li>
                     
                     <?php if (canPerformAction('view_audit_logs')): ?>
