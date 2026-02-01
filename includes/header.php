@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($page_title) ? $page_title . ' - ' : ''; ?>Change Management System</title>
-    <link rel="stylesheet" href="/change-management/assets/style.css">
+    <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
     <?php if (isLoggedIn()): 
