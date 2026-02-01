@@ -21,7 +21,7 @@ function hasRole($role) {
 // Fungsi untuk redirect jika belum login
 function requireLogin() {
     if (!isLoggedIn()) {
-        header('Location: /change-management/login.php');
+        header('Location: /login.php');
         exit;
     }
 }
