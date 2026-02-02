@@ -119,7 +119,7 @@ graph LR
 *Main dashboard showing change request statistics and recent activities*
 
 ### Change Request Detail
-![Change Detail](./screenshots/change-detail.png)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/49ef732a-9781-4381-bf70-9009d231c21c" />
 *Comprehensive change request view with all technical details*
 
 ### Approval Workflow
