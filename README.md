@@ -127,7 +127,7 @@ graph LR
 *Manager reviewing and approving change requests*
 
 ### Audit Logs
-![Audit Logs](./screenshots/audit-logs.png)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b2863eaf-8e22-4a4c-b195-4ec848b7416c" />
 *Complete activity tracking and filtering*
 
 ---
