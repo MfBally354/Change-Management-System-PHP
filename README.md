@@ -123,7 +123,7 @@ graph LR
 *Comprehensive change request view with all technical details*
 
 ### Approval Workflow
-![Approval](./screenshots/approval-workflow.png)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/31d49f60-b0e7-4810-a7e4-80ec82511957" />
 *Manager reviewing and approving change requests*
 
 ### Audit Logs
