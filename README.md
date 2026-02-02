@@ -341,7 +341,7 @@ function getStatusBadge($status) {
 
 ### Entity Relationship
 
-![Database Schema](./screenshots/database-schema.png)
+<img width="735" height="875" alt="image" src="https://github.com/user-attachments/assets/e209732c-7ef8-4605-97de-d59ce9335703" />
 
 ---
 
