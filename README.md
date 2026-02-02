@@ -115,7 +115,7 @@ graph LR
 ## 🎬 Demo
 
 ### Dashboard Overview
-![Dashboard](./screenshots/dashboard.png)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7860ef99-d10b-4f4e-8c8a-43090fc71beb" />
 *Main dashboard showing change request statistics and recent activities*
 
 ### Change Request Detail
