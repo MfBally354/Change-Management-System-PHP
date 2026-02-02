@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Change Management System Banner](./screenshots/banner.png)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d3ee80ea-84c9-4963-9721-d62d3d087cb0" />
 
 **A Complete IT Change Management System with Multi-Role Authentication, Approval Workflow, and Comprehensive Audit Trail**
 
