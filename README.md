@@ -145,7 +145,7 @@ graph LR
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/MfBally/change-management-system.git
+git clone https://github.com/MfBally354/change-management-system.git
 cd change-management-system
 
 # 2. Setup database
