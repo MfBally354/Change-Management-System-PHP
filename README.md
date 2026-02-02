@@ -1,267 +1,328 @@
-# Change Management System 🔧
+# 🔧 Change Management System
 
-Sistem IT Change Management lengkap dengan multi-role authentication, approval workflow, dan audit trail.
+<div align="center">
 
-## 📋 Fitur Utama
+![Change Management System Banner](./screenshots/banner.png)
 
-### 1. **Multi-Role System**
-- **Admin**: Kelola semua aspek sistem, user management, lihat semua change requests
-- **Manager**: Review & approve change requests, assign ke IT staff
-- **IT Staff**: Eksekusi change requests yang ditugaskan
-- **Client/User**: Buat dan track change requests sendiri
+**A Complete IT Change Management System with Multi-Role Authentication, Approval Workflow, and Comprehensive Audit Trail**
 
-### 2. **Change Request Lifecycle**
-```
-Draft → Submitted → Reviewing → Approved → Scheduled → In Progress → Completed
-                      ↓
-                   Rejected
-```
+[![PHP Version](https://img.shields.io/badge/PHP-7.4%2B-blue.svg)](https://www.php.net/)
+[![MySQL](https://img.shields.io/badge/MySQL-5.7%2B-orange.svg)](https://www.mysql.com/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/yourusername/change-management-system/pulls)
 
-**Status yang tersedia:**
-- `draft` - Masih dalam proses pembuatan
-- `submitted` - Sudah disubmit untuk approval
-- `reviewing` - Sedang direview
-- `approved` - Disetujui manager
-- `rejected` - Ditolak manager
-- `scheduled` - Sudah dijadwalkan
-- `in_progress` - Sedang dikerjakan IT staff
-- `completed` - Selesai berhasil
-- `failed` - Gagal
-- `rolled_back` - Di-rollback
-- `cancelled` - Dibatalkan
+[Features](#-features) • [Demo](#-demo) • [Installation](#-installation) • [Usage](#-usage) • [Screenshots](#-screenshots) • [Documentation](#-documentation)
 
-### 3. **Audit Trail Lengkap**
-Setiap aktivitas tercatat:
-- Login/Logout
-- Create/Edit/Delete
-- Approve/Reject
-- Execute/Complete
-- Comments
-
-### 4. **Fitur Tambahan**
-- Priority Management (Low, Medium, High, Critical)
-- Impact & Risk Assessment
-- Implementation & Rollback Plans
-- Comments & Discussion
-- Scheduled Maintenance Window
-- Completion Notes
+</div>
 
 ---
 
-## 🚀 Instalasi
+## 📋 Overview
 
-### Requirements
-- Apache Web Server
-- PHP 7.4 atau lebih baru
-- MySQL/MariaDB 5.7+
-- Extension: mysqli, pdo_mysql
+Change Management System adalah aplikasi web berbasis PHP yang dirancang untuk mengelola IT Change Requests dengan sistem approval workflow yang terstruktur. Sistem ini membantu organisasi dalam melacak, mengelola, dan mendokumentasikan setiap perubahan infrastruktur IT dengan akuntabilitas penuh.
 
-### Langkah-langkah Install
+### 🎯 Why This System?
 
-#### 1. **Clone/Copy Files**
+- ✅ **Structured Workflow** - Proses approval yang jelas dan terukur
+- 🔐 **Role-Based Access** - 4 level user dengan permission berbeda
+- 📊 **Complete Audit Trail** - Setiap aktivitas tercatat dengan detail
+- 💬 **Collaboration** - Sistem comment dan discussion untuk setiap change
+- 🚀 **Easy to Deploy** - Instalasi mudah dengan dokumentasi lengkap
+- 📱 **Responsive Design** - Tampilan optimal di desktop dan mobile
+
+---
+
+## ✨ Features
+
+### 🔑 Multi-Role System
+
+<table>
+<tr>
+<td width="25%">
+
+**👑 Administrator**
+- Full system access
+- User management
+- All change requests
+- System configuration
+- Audit logs
+
+</td>
+<td width="25%">
+
+**📋 Manager**
+- Review & approve changes
+- Assign to IT staff
+- View all changes
+- Audit logs
+- Performance reports
+
+</td>
+<td width="25%">
+
+**🔧 IT Staff**
+- Execute assigned changes
+- Update progress
+- Complete implementations
+- Add technical notes
+- View assigned tasks
+
+</td>
+<td width="25%">
+
+**👤 Client/User**
+- Create change requests
+- Track own changes
+- Add comments
+- View status updates
+- Submit for approval
+
+</td>
+</tr>
+</table>
+
+### 🔄 Complete Change Lifecycle
+
+```mermaid
+graph LR
+    A[Draft] --> B[Submitted]
+    B --> C{Review}
+    C -->|Approved| D[Scheduled]
+    C -->|Rejected| E[Rejected]
+    D --> F[In Progress]
+    F --> G{Execution}
+    G -->|Success| H[Completed]
+    G -->|Failed| I[Failed/Rolled Back]
+```
+
+### 🛠️ Core Features
+
+| Feature | Description |
+|---------|-------------|
+| **Change Request Management** | Create, edit, track, and manage IT change requests |
+| **Approval Workflow** | Multi-level approval with comments and feedback |
+| **Risk Assessment** | Priority, impact, and risk level classification |
+| **Implementation Planning** | Detailed implementation and rollback plans |
+| **Scheduling** | Plan maintenance windows and track execution time |
+| **Audit Logging** | Complete activity tracking with IP and user agent |
+| **Comments System** | Discussion and collaboration on each change |
+| **Status Tracking** | Real-time status updates through the lifecycle |
+| **Dashboard Analytics** | Statistics and quick insights |
+| **User Management** | Create, activate/deactivate users with role assignment |
+
+---
+
+## 🎬 Demo
+
+### Dashboard Overview
+![Dashboard](./screenshots/dashboard.png)
+*Main dashboard showing change request statistics and recent activities*
+
+### Change Request Detail
+![Change Detail](./screenshots/change-detail.png)
+*Comprehensive change request view with all technical details*
+
+### Approval Workflow
+![Approval](./screenshots/approval-workflow.png)
+*Manager reviewing and approving change requests*
+
+### Audit Logs
+![Audit Logs](./screenshots/audit-logs.png)
+*Complete activity tracking and filtering*
+
+---
+
+## 🚀 Installation
+
+### Prerequisites
+
+- **Web Server**: Apache 2.4+
+- **PHP**: 7.4 or higher
+- **Database**: MySQL 5.7+ or MariaDB 10.2+
+- **PHP Extensions**: mysqli, pdo_mysql
+
+### Quick Install
+
 ```bash
-# Via SSH
-ssh user@your-server
-cd /var/www/
-git clone https://github.com/MfBally354/Change-Management-System-PHP.git 
-# atau copy manual files ke /var/www/change-management
-```
+# 1. Clone repository
+git clone https://github.com/yourusername/change-management-system.git
+cd change-management-system
 
-#### 2. **Setup Database**
-```bash
-# Login ke MySQL
-mysql -u root -p
+# 2. Setup database
+mysql -u root -p < database.sql
 
-# Import database
-mysql -u root -p < /var/www/change-management/database.sql
+# 3. Configure database connection
+nano config/database.php
+# Edit DB_HOST, DB_USER, DB_PASS, DB_NAME
 
-# Atau manual:
-# - Buka phpMyAdmin
-# - Create database 'change_management'
-# - Import file database.sql
-```
-
-#### 3. **Konfigurasi Database Connection**
-Edit file `/var/www/change-management/config/database.php`:
-
-```php
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');           // sesuaikan
-define('DB_PASS', '[Masukkan password anda]');  // sesuaikan
-define('DB_NAME', 'change_management');
-```
-
-#### 4. **Setup Apache Virtual Host**
-```bash
-sudo nano /etc/apache2/sites-available/change-management.conf
-```
-
-Isi dengan:
-```apache
-<VirtualHost *:80>
-    ServerName localhost
-    DocumentRoot /var/www/change-management
-    
-    <Directory /var/www/change-management>
-        Options Indexes FollowSymLinks
-        AllowOverride All
-        Require all granted
-    </Directory>
-    
-    ErrorLog ${APACHE_LOG_DIR}/change-management-error.log
-    CustomLog ${APACHE_LOG_DIR}/change-management-access.log combined
-</VirtualHost>
-```
-
-Enable site:
-```bash
-sudo a2ensite change-management
-sudo systemctl reload apache2
-```
-
-#### 5. **Set Permissions**
-```bash
+# 4. Set permissions
 sudo chown -R www-data:www-data /var/www/change-management
 sudo chmod -R 755 /var/www/change-management
+
+# 5. Configure Apache Virtual Host (optional)
+sudo nano /etc/apache2/sites-available/change-management.conf
+sudo a2ensite change-management
+sudo systemctl reload apache2
+
+# 6. Access application
+# Open browser: http://localhost/change-management/
 ```
 
-#### 6. **Akses Aplikasi**
-Buka browser: `http://localhost/change-management/` atau `http://your-server-ip/change-management/`
+### Docker Installation (Alternative)
+
+```bash
+# Coming soon...
+docker-compose up -d
+```
+
+### Default Users
+
+| Username | Password | Role | Access Level |
+|----------|----------|------|--------------|
+| `admin` | `admin123` | Administrator | Full system access |
+| `manager1` | `manager123` | Manager | Approve & assign changes |
+| `staff1` | `staff123` | IT Staff | Execute changes |
+| `client1` | `client123` | Client | Create & track changes |
+
+> ⚠️ **IMPORTANT**: Change all default passwords immediately after first login!
 
 ---
 
-## 👥 Default Users
+## 📖 Usage
 
-| Username  | Password     | Role      | Description               |
-|-----------|--------------|-----------|---------------------------|
-| admin     | admin123     | Admin     | Full system access        |
-| manager1  | manager123   | Manager   | Approve & assign changes  |
-| staff1    | staff123     | IT Staff  | Execute changes           |
-| client1   | client123    | Client    | Create & track changes    |
+### For Users/Clients
 
-⚠️ **PENTING:** Segera ubah password default setelah first login!
+1. **Create Change Request**
+   - Login → Dashboard → "New Change Request"
+   - Fill in details: Title, Description, Category, Priority
+   - Add Implementation Plan and Rollback Plan
+   - Save as Draft or Submit for Approval
 
----
+2. **Track Status**
+   - View all your changes in Dashboard
+   - Check status updates and comments
+   - Get notified when status changes
 
-## 📖 Cara Penggunaan
+### For Managers
 
-### Sebagai **Client/User**
+1. **Review & Approve**
+   - Dashboard → "Pending Approval"
+   - Review technical details and risk assessment
+   - Approve and assign to IT Staff, or Reject with comments
 
-1. **Login** dengan credentials
-2. **Dashboard**: Lihat change requests Anda
-3. **Create New Change Request**:
-   - Klik "New Change Request"
-   - Isi form (Title, Description, Category, Priority, dll)
-   - **Save as Draft** (simpan sementara) atau **Submit for Approval** (langsung submit)
-4. **Track Status**: Lihat progress change request di dashboard atau detail page
+2. **Monitor Progress**
+   - Track all active changes
+   - View audit logs
+   - Generate reports
 
-### Sebagai **Manager**
+### For IT Staff
 
-1. **Login** sebagai manager
-2. **Dashboard**: Lihat pending approvals
-3. **Review Change Request**:
-   - Klik change request yang status "Submitted"
-   - Klik "Review & Approve"
-   - Pilih IT Staff yang akan ditugaskan
-   - Tambahkan comments (opsional)
-   - **Approve** atau **Reject**
-4. **Monitor**: Track semua change requests di List page
+1. **Execute Changes**
+   - Dashboard → "Your Tasks"
+   - Start execution when ready
+   - Update progress via comments
+   - Mark as complete with completion notes
 
-### Sebagai **IT Staff**
+### For Administrators
 
-1. **Login** sebagai staff
-2. **Dashboard**: Lihat tasks yang assigned ke Anda
-3. **Execute Change**:
-   - Klik change request yang assigned dan status "Approved"
-   - Klik "Start Execution" → status jadi "In Progress"
-   - Lakukan implementasi sesuai Implementation Plan
-   - Klik "Mark Complete"
-   - Pilih status: **Completed**, **Failed**, atau **Rolled Back**
-   - Isi Completion Notes
-4. **Comments**: Tambahkan update/progress di comment section
+1. **User Management**
+   - Create new users
+   - Assign roles
+   - Activate/Deactivate accounts
+   - Reset passwords
 
-### Sebagai **Admin**
-
-1. **Login** sebagai admin
-2. **Full Access** ke semua fitur:
-   - View semua change requests
-   - Edit/Delete (jika diperlukan)
-   - User Management → Create, Activate/Deactivate users
-   - Audit Logs → Track semua aktivitas
-   - Reset password user
+2. **System Monitoring**
+   - View all changes
+   - Monitor audit logs
+   - System configuration
 
 ---
 
-## 🗂️ Struktur Folder
+## 🗂️ Project Structure
 
 ```
 change-management/
-├── index.php              # Dashboard
-├── login.php              # Login page
-├── logout.php             # Logout handler
-├── database.sql           # Database schema & sample data
+├── 📄 index.php              # Dashboard
+├── 📄 login.php              # Authentication
+├── 📄 logout.php             # Logout handler
+├── 📄 database.sql           # Database schema
 │
-├── config/
-│   └── database.php       # Database connection & helpers
+├── ⚙️ config/
+│   └── database.php          # DB connection & helpers
 │
-├── auth/
-│   └── auth_check.php     # Authentication & authorization
+├── 🔐 auth/
+│   └── auth_check.php        # Authentication & authorization
 │
-├── changes/               # Change Request module
-│   ├── create.php         # Create new change
-│   ├── list.php           # List all changes (with filters)
-│   ├── detail.php         # View change details
-│   ├── approve.php        # Approve/reject change
-│   ├── execute.php        # Start execution
-│   ├── complete.php       # Mark as complete
-│   └── add_comment.php    # Add comment handler
+├── 📋 changes/               # Change Request module
+│   ├── create.php            # Create new change
+│   ├── list.php              # List with filters
+│   ├── detail.php            # View details
+│   ├── approve.php           # Approval workflow
+│   ├── execute.php           # Start execution
+│   ├── complete.php          # Mark complete
+│   └── add_comment.php       # Comment handler
 │
-├── logs/
-│   └── audit.php          # Audit logs viewer
+├── 📊 logs/
+│   └── audit.php             # Audit logs viewer
 │
-├── admin/
-│   └── users.php          # User management
+├── 👥 admin/
+│   └── users.php             # User management
 │
-├── assets/
-│   └── style.css          # Styling
+├── 🎨 assets/
+│   └── style.css             # Styling
 │
-└── includes/
-    ├── header.php         # Header template
-    └── footer.php         # Footer template
+└── 📦 includes/
+    ├── header.php            # Header template
+    └── footer.php            # Footer template
 ```
 
 ---
 
 ## 🔐 Security Features
 
-1. **Password Hashing**: Menggunakan PHP `password_hash()` dengan bcrypt
-2. **SQL Injection Prevention**: Prepared statements di semua query
-3. **Session Management**: Secure session handling
-4. **Role-Based Access Control**: Permission check di setiap halaman
-5. **Audit Trail**: Semua aktivitas tercatat dengan IP & user agent
-6. **XSS Prevention**: `htmlspecialchars()` di semua output
+- ✅ **Password Hashing**: bcrypt with `password_hash()`
+- ✅ **SQL Injection Prevention**: Prepared statements
+- ✅ **XSS Protection**: `htmlspecialchars()` on all outputs
+- ✅ **Session Security**: Secure session management
+- ✅ **Role-Based Access Control**: Permission checks on every page
+- ✅ **Audit Trail**: Complete activity logging with IP tracking
+- ✅ **CSRF Protection**: (Recommended to add tokens)
 
 ---
 
 ## 🎨 Customization
 
-### Mengubah Warna Theme
-Edit `/assets/style.css`, cari gradient colors:
+### Change Theme Colors
+
+Edit `assets/style.css`:
+
 ```css
+/* Main gradient */
 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+/* Change to your brand colors */
+background: linear-gradient(135deg, #YOUR_COLOR_1 0%, #YOUR_COLOR_2 100%);
 ```
 
-### Menambah Category Baru
-Edit `database.sql` dan file `/changes/create.php`:
+### Add Custom Categories
+
+Edit `database.sql` and `changes/create.php`:
+
 ```sql
-category ENUM('software', 'hardware', 'network', 'security', 'database', 'other')
+category ENUM('software', 'hardware', 'network', 'security', 'database', 'cloud', 'other')
 ```
 
-### Menambah Status Baru
-Edit enum di database dan tambahkan badge di `config/database.php`:
+### Extend Status Workflow
+
+Add new statuses in `config/database.php`:
+
 ```php
 function getStatusBadge($status) {
-    // tambah status baru di sini
+    $badges = [
+        // ... existing statuses
+        'pending_testing' => '<span class="badge badge-warning">Pending Testing</span>',
+        'deployed' => '<span class="badge badge-success">Deployed</span>',
+    ];
 }
 ```
 
@@ -269,94 +330,133 @@ function getStatusBadge($status) {
 
 ## 📊 Database Schema
 
-### Tabel Utama
+### Main Tables
 
-1. **users** - User accounts & roles
-2. **change_requests** - Change request data (inti sistem)
-3. **change_approvals** - Approval history
-4. **change_comments** - Comments & discussion
-5. **audit_logs** - Activity tracking
-6. **change_attachments** - File uploads (opsional)
+- **users** - User accounts and roles
+- **change_requests** - Core change request data
+- **change_approvals** - Approval history
+- **change_comments** - Comments and discussions
+- **audit_logs** - Activity tracking
+- **change_attachments** - File uploads (optional)
+
+### Entity Relationship
+
+![Database Schema](./screenshots/database-schema.png)
+
+---
+
+## 🛣️ Roadmap
+
+### Version 2.0 (Planned)
+
+- [ ] 📧 Email notifications
+- [ ] 📎 File attachment support
+- [ ] 📅 Calendar view for scheduled changes
+- [ ] 📈 Advanced analytics dashboard
+- [ ] 📱 Progressive Web App (PWA)
+- [ ] 🌐 REST API for integrations
+- [ ] 📊 Export to PDF/Excel
+- [ ] 🔔 Real-time notifications
+- [ ] 🌍 Multi-language support
+- [ ] 🎨 Theme customization UI
 
 ---
 
 ## 🐛 Troubleshooting
 
-### "Connection failed" saat akses
-- Cek konfigurasi database di `config/database.php`
-- Pastikan MySQL service running: `sudo systemctl status mysql`
+### Database Connection Failed
 
-### "Permission denied"
 ```bash
+# Check MySQL service
+sudo systemctl status mysql
+
+# Test connection
+mysql -u root -p
+
+# Verify credentials in config/database.php
+```
+
+### Permission Denied
+
+```bash
+# Set correct permissions
 sudo chown -R www-data:www-data /var/www/change-management
+sudo chmod -R 755 /var/www/change-management
 ```
 
-### Lupa password admin
-Update manual di database:
+### Blank Page / PHP Errors
+
+```bash
+# Check Apache error log
+tail -f /var/log/apache2/error.log
+
+# Enable error display (development only)
+# Edit config/database.php:
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+```
+
+### Forgot Admin Password
+
 ```sql
--- Password: newpassword123
-UPDATE users SET password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi' WHERE username = 'admin';
-```
-
-### Session tidak persistent
-Edit `php.ini`:
-```ini
-session.gc_maxlifetime = 3600
-session.cookie_lifetime = 3600
+-- Reset to: newpassword123
+UPDATE users 
+SET password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi' 
+WHERE username = 'admin';
 ```
 
 ---
 
-## 🔄 Backup & Restore
+## 🤝 Contributing
 
-### Backup Database
-```bash
-mysqldump -u root -p change_management > backup_$(date +%Y%m%d).sql
-```
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-### Restore Database
-```bash
-mysql -u root -p change_management < backup_20250130.sql
-```
-
----
-
-## 📈 Future Enhancements
-
-Ide pengembangan selanjutnya:
-- [ ] Email notifications
-- [ ] File attachments
-- [ ] Calendar view untuk scheduled changes
-- [ ] API REST untuk integrasi
-- [ ] Dashboard analytics/charts
-- [ ] Export to PDF/Excel
-- [ ] Mobile responsive improvements
-- [ ] Multi-language support
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
 ## 📝 License
 
-This project is open source. Feel free to use and modify.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 👨‍💻 Developer Notes
+## 👨‍💻 Author
 
-**Tech Stack:**
-- Backend: PHP 7.4+, MySQL
-- Frontend: Vanilla JavaScript, CSS3
-- No frameworks - pure PHP for simplicity
+**Your Name**
 
-**Best Practices:**
-- Prepared statements untuk security
-- Audit trail untuk accountability
-- Role-based permissions
-- Clean separation of concerns
-
-**Contact:**
-Untuk pertanyaan atau support, hubungi IT Admin Anda.
+- GitHub: [@yourusername](https://github.com/yourusername)
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourusername)
+- Email: your.email@example.com
 
 ---
 
-🎉 **Selamat menggunakan Change Management System!**
+## 🙏 Acknowledgments
+
+- Inspired by ITIL Change Management best practices
+- Built with modern web technologies
+- Community feedback and contributions
+
+---
+
+## 📞 Support
+
+If you have any questions or need help, please:
+
+1. Check the [Documentation](./README.md)
+2. Search [existing issues](https://github.com/yourusername/change-management-system/issues)
+3. Create a [new issue](https://github.com/yourusername/change-management-system/issues/new)
+
+---
+
+<div align="center">
+
+**⭐ Star this repository if you find it helpful!**
+
+Made with ❤️ by [Your Name]
+
+</div>
