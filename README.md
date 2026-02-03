@@ -430,7 +430,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Your Name**
 
 - GitHub: [MfBally354](https://github.com/MfBally354)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourusername)
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/)
 - Email: your.email@example.com
 
 ---
