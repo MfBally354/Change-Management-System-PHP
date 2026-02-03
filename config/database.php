@@ -3,8 +3,8 @@
 // Sesuaikan dengan environment kamu
 
 define('DB_HOST', 'localhost');
-define('DB_USER', 'iqbal'); // atau user MySQL kamu
-define('DB_PASS', '#semarangwhj354iqbal#'); // password MySQL
+define('DB_USER', 'root'); // atau user MySQL kamu
+define('DB_PASS', ''); // password MySQL
 define('DB_NAME', 'change_management');
 
 // Timezone
