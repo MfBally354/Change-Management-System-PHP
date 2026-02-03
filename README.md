@@ -448,7 +448,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you have any questions or need help, please:
 
 1. Check the [Documentation](./README.md)
-2. Search [existing issues](https://github.com/Mf/change-management-system/issues)
+2. Search [existing issues](https://github.com/MfBally/change-management-system/issues)
 3. Create a [new issue](https://github.com/MfBally354/change-management/issues/new)
 
 ---
