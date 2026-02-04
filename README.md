@@ -171,7 +171,7 @@ sudo systemctl reload apache2
 ### Docker Installation (Alternative)
 
 ```bash
-docker-compose up -d
+docker-compose up -d --build
 ```
 
 ### Default Users
