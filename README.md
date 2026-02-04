@@ -431,7 +431,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - GitHub: [MfBally354](https://github.com/MfBally354)
 - LinkedIn: [Iqbal Guntur](https://linkedin.com/in/iqbal-guntur-bismoko-29291533a/)
-- Email: your.email@example.com
+- Email: 
 
 ---
 
