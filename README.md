@@ -171,7 +171,6 @@ sudo systemctl reload apache2
 ### Docker Installation (Alternative)
 
 ```bash
-# Coming soon...
 docker-compose up -d
 ```
 
