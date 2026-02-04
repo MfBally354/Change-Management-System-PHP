@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  # Web Application (PHP + Apache)
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: change-management-web
+    restart: unless-stopped
+    ports:
+      - "8092:80"
+    volumes:
+      - ./:/var/www/html
+      - ./docker/logs/apache:/var/log/apache2
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+      - PHP_MEMORY_LIMIT=256M
+      - PHP_UPLOAD_MAX_FILESIZE=50M
+      - PHP_POST_MAX_SIZE=50M
+    depends_on:
+      - db
+    networks:
+      - change-management-network
+
+  # MySQL Database
+  db:
+    image: mysql:8.0
+    container_name: change-management-db
+    restart: unless-stopped
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password_change_me
+      MYSQL_DATABASE: change_management
+      MYSQL_USER: change_user
+      MYSQL_PASSWORD: change_password_123
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./database.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    networks:
+      - change-management-network
+    command: --default-authentication-plugin=mysql_native_password
+
+  # phpMyAdmin (Optional - untuk manage database)
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: change-management-phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8093:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root_password_change_me
+      UPLOAD_LIMIT: 50M
+    depends_on:
+      - db
+    networks:
+      - change-management-network
+
+# Networks
+networks:
+  change-management-network:
+    driver: bridge
+
+# Volumes
+volumes:
+  mysql-data:
+    driver: local
