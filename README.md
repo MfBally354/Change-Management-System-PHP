@@ -165,7 +165,7 @@ sudo a2ensite change-management
 sudo systemctl reload apache2
 
 # 6. Access application
-# Open browser: http://localhost/change-management/
+# Open browser: http://localhost/change-management-/
 ```
 
 ### Docker Installation (Alternative)
