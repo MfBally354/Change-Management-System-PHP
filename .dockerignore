@@ -54,4 +54,4 @@ npm-debug.log
 vendor/
 
 # Screenshots (tidak perlu di container)
-screenshot/
+screenshots/
