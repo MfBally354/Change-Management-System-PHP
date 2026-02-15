@@ -439,6 +439,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Inspired by ITIL Change Management best practices
 - Built with modern web technologies
 - Community feedback and contributions
+- Other
 
 ---
 
